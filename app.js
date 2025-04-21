@@ -20,7 +20,7 @@ app.get('/api/patients', async (req, res) => {
   const patients = await Patient.find();
   res.json(patients);
 });
-
+mongoose.set('strictQuery', true);
 app.post('/api/patients', async (req, res) => {
   const newPatient = new Patient(req.body);
   await newPatient.save();
