@@ -116,17 +116,7 @@
       const gender = document.getElementById('pGender').value;
       const phone = document.getElementById('pPhone').value;
 
-      fetch(`${BASE_URL}/api/patients`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, dob, gender, phone })
-      })
-      .then(res => res.json())
-      .then(() => {
-        alert('Patient added!');
-        showSection('dashboard');
-      });
-    }
+     fetch('https://healthsync-server3-mhdl.onrender.com/api/patients')
 
     function loadPatients() {
       const list = document.getElementById('patientList');
