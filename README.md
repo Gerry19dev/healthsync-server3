@@ -1,26 +1,29 @@
-# HealthSync v2 – Clinic Ready
+# HealthSync v2 – Full Version
 
 ## Overview
-A professional health management system connecting patients, doctors, diagnoses, medications, and appointments.
+A professional clinic-ready system managing:
+- Patients
+- Doctors
+- Appointments
+- Diagnoses (with prefilled list)
+- Medications
+- Medical Scans
+- Full Calendar View
+- Search Engine for Patients, Doctors, Diagnosis
 
-## Structure
-- `client/`: HTML frontend with Bootstrap
-- `server/`: Node.js + Express + MongoDB backend
+## Project Structure
+- `client/`: HTML + JS frontend
+- `server/`: Node.js backend with Express, MongoDB (Mongoose)
 
-## Deploy
-1. Backend:
-   - Push `server/` to GitHub
-   - Deploy on Render.com
-   - Set `MONGO_URI` in environment variables
+## Deployment
+1. Push `server/` to GitHub
+2. Deploy to Render and set your MongoDB URI in `.env`
+3. Upload `client/` folder to Netlify (or connect to GitHub)
 
-2. Frontend:
-   - Upload `client/` to Netlify via drag-and-drop or GitHub
-
-3. MongoDB:
-   - Create a cluster and set up users with access
-
-## Notes
-This version includes:
-- Patient/Doctor DB with search
-- Linked diagnosis, medications, scans, appointments
-- Calendar-style UI and full CRUD logic
+## MongoDB Models
+- Patient: name, dob, gender, phone
+- Doctor: name, specialization, phone
+- Appointment: patientId, doctorId, dateTime
+- Diagnosis: patientId, doctorId, dateTime, description
+- Medication: patientId, doctorId, medicationName, time
+- Scan: patientId, filename, uploadDate
